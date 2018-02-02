@@ -1,0 +1,77 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="mySanPhamLabel" jhiTranslate="triSilkApp.sanPham.home.createOrEditLabel">Create or edit a San Pham</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!sanPham.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="sanPham.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.ngayTao" for="field_ngayTao">Ngay Tao</label>
+            <div class="input-group">
+                <input id="field_ngayTao" type="text" class="form-control" name="ngayTao" ngbDatepicker  #ngayTaoDp="ngbDatepicker" [(ngModel)]="sanPham.ngayTao"
+                />
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="ngayTaoDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.khoRong" for="field_khoRong">Kho Rong</label>
+            <input type="text" class="form-control" name="khoRong" id="field_khoRong"
+                [(ngModel)]="sanPham.khoRong" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.met" for="field_met">Met</label>
+            <input type="text" class="form-control" name="met" id="field_met"
+                [(ngModel)]="sanPham.met" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.trongLuong" for="field_trongLuong">Trong Luong</label>
+            <input type="text" class="form-control" name="trongLuong" id="field_trongLuong"
+                [(ngModel)]="sanPham.trongLuong" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.tenSanPham" for="field_tenSanPham">Ten San Pham</label>
+            <input type="text" class="form-control" name="tenSanPham" id="field_tenSanPham"
+                [(ngModel)]="sanPham.tenSanPham" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.donGia" for="field_donGia">Don Gia</label>
+            <input type="text" class="form-control" name="donGia" id="field_donGia"
+                [(ngModel)]="sanPham.donGia" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.tongTien" for="field_tongTien">Tong Tien</label>
+            <input type="text" class="form-control" name="tongTien" id="field_tongTien"
+                [(ngModel)]="sanPham.tongTien" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.metConLai" for="field_metConLai">Met Con Lai</label>
+            <input type="text" class="form-control" name="metConLai" id="field_metConLai"
+                [(ngModel)]="sanPham.metConLai" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.maSanPham" for="field_maSanPham">Ma San Pham</label>
+            <select class="form-control" id="field_maSanPham" name="maSanPham" [(ngModel)]="sanPham.maSanPham" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="maSanPhamOption.id === sanPham.maSanPham?.id ? sanPham.maSanPham : maSanPhamOption" *ngFor="let maSanPhamOption of masanphams; trackBy: trackMaSanPhamById">{{maSanPhamOption.productId}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

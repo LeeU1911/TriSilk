@@ -1,0 +1,60 @@
+
+<div *ngIf="sanPham">
+    <h2><span jhiTranslate="triSilkApp.sanPham.detail.title">San Pham</span> {{sanPham.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="triSilkApp.sanPham.ngayTao">Ngay Tao</span></dt>
+        <dd>
+            <span>{{sanPham.ngayTao | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="triSilkApp.sanPham.khoRong">Kho Rong</span></dt>
+        <dd>
+            <span>{{sanPham.khoRong}}</span>
+        </dd>
+        <dt><span jhiTranslate="triSilkApp.sanPham.met">Met</span></dt>
+        <dd>
+            <span>{{sanPham.met}}</span>
+        </dd>
+        <dt><span jhiTranslate="triSilkApp.sanPham.trongLuong">Trong Luong</span></dt>
+        <dd>
+            <span>{{sanPham.trongLuong}}</span>
+        </dd>
+        <dt><span jhiTranslate="triSilkApp.sanPham.tenSanPham">Ten San Pham</span></dt>
+        <dd>
+            <span>{{sanPham.tenSanPham}}</span>
+        </dd>
+        <dt><span jhiTranslate="triSilkApp.sanPham.donGia">Don Gia</span></dt>
+        <dd>
+            <span>{{sanPham.donGia}}</span>
+        </dd>
+        <dt><span jhiTranslate="triSilkApp.sanPham.tongTien">Tong Tien</span></dt>
+        <dd>
+            <span>{{sanPham.tongTien}}</span>
+        </dd>
+        <dt><span jhiTranslate="triSilkApp.sanPham.metConLai">Met Con Lai</span></dt>
+        <dd>
+            <span>{{sanPham.metConLai}}</span>
+        </dd>
+        <dt><span jhiTranslate="triSilkApp.sanPham.maSanPham">Ma San Pham</span></dt>
+        <dd>
+            <div *ngIf="sanPham.maSanPham">
+                <a [routerLink]="['/ma-san-pham', sanPham.maSanPham?.id]">{{sanPham.maSanPham?.productId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'san-pham/'+ sanPham.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,24 @@
+
+{
+    "triSilkApp": {
+        "maSanPham" : {
+            "home": {
+                "title": "Ma San Phams",
+                "createLabel": "Thêm mới một Ma San Pham",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Ma San Pham"
+            },
+            "created": "Một Ma San Pham mới được tạo với định danh {{ param }}",
+            "updated": "Một Ma San Pham cập nhật với định danh {{ param }}",
+            "deleted": "Một Ma San Pham đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Ma San Pham {{ id }}?"
+            },
+            "detail": {
+                "title": "Ma San Pham"
+            },
+            "productId": "Product Id",
+            "createdDate": "Created Date",
+            "sanPham": "San Pham"
+        }
+    }
+}

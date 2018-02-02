@@ -1,0 +1,31 @@
+
+{
+    "triSilkApp": {
+        "sanPham" : {
+            "home": {
+                "title": "San Phams",
+                "createLabel": "Thêm mới một San Pham",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật San Pham"
+            },
+            "created": "Một San Pham mới được tạo với định danh {{ param }}",
+            "updated": "Một San Pham cập nhật với định danh {{ param }}",
+            "deleted": "Một San Pham đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa San Pham {{ id }}?"
+            },
+            "detail": {
+                "title": "San Pham"
+            },
+            "ngayTao": "Ngay Tao",
+            "khoRong": "Kho Rong",
+            "met": "Met",
+            "trongLuong": "Trong Luong",
+            "tenSanPham": "Ten San Pham",
+            "donGia": "Don Gia",
+            "tongTien": "Tong Tien",
+            "metConLai": "Met Con Lai",
+            "hdbhchitiet": "Hdbhchitiet",
+            "maSanPham": "Ma San Pham"
+        }
+    }
+}

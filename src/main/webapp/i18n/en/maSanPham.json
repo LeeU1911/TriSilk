@@ -1,0 +1,24 @@
+
+{
+    "triSilkApp": {
+        "maSanPham" : {
+            "home": {
+                "title": "Ma San Phams",
+                "createLabel": "Create a new Ma San Pham",
+                "createOrEditLabel": "Create or edit a Ma San Pham"
+            },
+            "created": "A new Ma San Pham is created with identifier {{ param }}",
+            "updated": "A Ma San Pham is updated with identifier {{ param }}",
+            "deleted": "A Ma San Pham is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Ma San Pham {{ id }}?"
+            },
+            "detail": {
+                "title": "Ma San Pham"
+            },
+            "productId": "Product Id",
+            "createdDate": "Created Date",
+            "sanPham": "San Pham"
+        }
+    }
+}

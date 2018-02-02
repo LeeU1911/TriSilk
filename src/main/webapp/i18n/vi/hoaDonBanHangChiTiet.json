@@ -1,0 +1,26 @@
+
+{
+    "triSilkApp": {
+        "hoaDonBanHangChiTiet" : {
+            "home": {
+                "title": "Hoa Don Ban Hang Chi Tiets",
+                "createLabel": "Thêm mới một Hoa Don Ban Hang Chi Tiet",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Hoa Don Ban Hang Chi Tiet"
+            },
+            "created": "Một Hoa Don Ban Hang Chi Tiet mới được tạo với định danh {{ param }}",
+            "updated": "Một Hoa Don Ban Hang Chi Tiet cập nhật với định danh {{ param }}",
+            "deleted": "Một Hoa Don Ban Hang Chi Tiet đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Hoa Don Ban Hang Chi Tiet {{ id }}?"
+            },
+            "detail": {
+                "title": "Hoa Don Ban Hang Chi Tiet"
+            },
+            "soMet": "So Met",
+            "donGia": "Don Gia",
+            "tongTien": "Tong Tien",
+            "hoadonbanhang": "Hoadonbanhang",
+            "sanPham": "San Pham"
+        }
+    }
+}

@@ -1,0 +1,78 @@
+<div>
+    <h2>
+        <span jhiTranslate="triSilkApp.sanPham.home.title">San Phams</span>
+        <button class="btn btn-primary float-right jh-create-entity create-san-pham" [routerLink]="['/', { outlets: { popup: ['san-pham-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="triSilkApp.sanPham.home.createLabel">
+            Create new San Pham
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="sanPhams">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="triSilkApp.sanPham.ngayTao">Ngay Tao</span></th>
+            <th><span jhiTranslate="triSilkApp.sanPham.khoRong">Kho Rong</span></th>
+            <th><span jhiTranslate="triSilkApp.sanPham.met">Met</span></th>
+            <th><span jhiTranslate="triSilkApp.sanPham.trongLuong">Trong Luong</span></th>
+            <th><span jhiTranslate="triSilkApp.sanPham.tenSanPham">Ten San Pham</span></th>
+            <th><span jhiTranslate="triSilkApp.sanPham.donGia">Don Gia</span></th>
+            <th><span jhiTranslate="triSilkApp.sanPham.tongTien">Tong Tien</span></th>
+            <th><span jhiTranslate="triSilkApp.sanPham.metConLai">Met Con Lai</span></th>
+            <th><span jhiTranslate="triSilkApp.sanPham.maSanPham">Ma San Pham</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sanPham of sanPhams ;trackBy: trackId">
+                <td><a [routerLink]="['../san-pham', sanPham.id ]">{{sanPham.id}}</a></td>
+                <td>{{sanPham.ngayTao | date:'mediumDate'}}</td>
+                <td>{{sanPham.khoRong}}</td>
+                <td>{{sanPham.met}}</td>
+                <td>{{sanPham.trongLuong}}</td>
+                <td>{{sanPham.tenSanPham}}</td>
+                <td>{{sanPham.donGia}}</td>
+                <td>{{sanPham.tongTien}}</td>
+                <td>{{sanPham.metConLai}}</td>
+                <td>
+                    <div *ngIf="sanPham.maSanPham">
+                        <a [routerLink]="['../ma-san-pham', sanPham.maSanPham?.id ]" >{{sanPham.maSanPham?.productId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../san-pham', sanPham.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'san-pham/'+ sanPham.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'san-pham/'+ sanPham.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

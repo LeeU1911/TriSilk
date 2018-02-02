@@ -1,0 +1,31 @@
+
+{
+    "triSilkApp": {
+        "sanPham" : {
+            "home": {
+                "title": "San Phams",
+                "createLabel": "Create a new San Pham",
+                "createOrEditLabel": "Create or edit a San Pham"
+            },
+            "created": "A new San Pham is created with identifier {{ param }}",
+            "updated": "A San Pham is updated with identifier {{ param }}",
+            "deleted": "A San Pham is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete San Pham {{ id }}?"
+            },
+            "detail": {
+                "title": "San Pham"
+            },
+            "ngayTao": "Ngay Tao",
+            "khoRong": "Kho Rong",
+            "met": "Met",
+            "trongLuong": "Trong Luong",
+            "tenSanPham": "Ten San Pham",
+            "donGia": "Don Gia",
+            "tongTien": "Tong Tien",
+            "metConLai": "Met Con Lai",
+            "hdbhchitiet": "Hdbhchitiet",
+            "maSanPham": "Ma San Pham"
+        }
+    }
+}

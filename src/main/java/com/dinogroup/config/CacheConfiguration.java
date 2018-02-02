@@ -45,6 +45,13 @@ public class CacheConfiguration {
             cm.createCache(com.dinogroup.domain.PersistentToken.class.getName(), jcacheConfiguration);
             cm.createCache(com.dinogroup.domain.User.class.getName() + ".persistentTokens", jcacheConfiguration);
             cm.createCache(com.dinogroup.domain.SocialUserConnection.class.getName(), jcacheConfiguration);
+            cm.createCache(com.dinogroup.domain.MaSanPham.class.getName(), jcacheConfiguration);
+            cm.createCache(com.dinogroup.domain.MaSanPham.class.getName() + ".sanPhams", jcacheConfiguration);
+            cm.createCache(com.dinogroup.domain.SanPham.class.getName(), jcacheConfiguration);
+            cm.createCache(com.dinogroup.domain.SanPham.class.getName() + ".hdbhchitiets", jcacheConfiguration);
+            cm.createCache(com.dinogroup.domain.HoaDonBanHang.class.getName(), jcacheConfiguration);
+            cm.createCache(com.dinogroup.domain.HoaDonBanHangChiTiet.class.getName(), jcacheConfiguration);
+            cm.createCache(com.dinogroup.domain.HoaDonBanHangChiTiet.class.getName() + ".hoadonbanhangs", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

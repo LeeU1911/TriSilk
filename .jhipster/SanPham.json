@@ -1,0 +1,57 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "hdbhchitiet",
+            "otherEntityName": "hoaDonBanHangChiTiet",
+            "otherEntityRelationshipName": "sanPham"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "maSanPham",
+            "otherEntityName": "maSanPham",
+            "otherEntityField": "productId"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ngayTao",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "khoRong",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "met",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "trongLuong",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenSanPham",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "donGia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tongTien",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "metConLai",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180202143100",
+    "entityTableName": "san_pham",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

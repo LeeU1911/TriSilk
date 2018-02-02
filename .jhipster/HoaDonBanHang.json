@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "hdbhchitiet",
+            "otherEntityName": "hoaDonBanHangChiTiet",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ngayBan",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "tongTienHD",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180202143101",
+    "entityTableName": "hoa_don_ban_hang",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

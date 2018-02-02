@@ -1,0 +1,24 @@
+
+{
+    "triSilkApp": {
+        "hoaDonBanHang" : {
+            "home": {
+                "title": "Hoa Don Ban Hangs",
+                "createLabel": "Create a new Hoa Don Ban Hang",
+                "createOrEditLabel": "Create or edit a Hoa Don Ban Hang"
+            },
+            "created": "A new Hoa Don Ban Hang is created with identifier {{ param }}",
+            "updated": "A Hoa Don Ban Hang is updated with identifier {{ param }}",
+            "deleted": "A Hoa Don Ban Hang is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Hoa Don Ban Hang {{ id }}?"
+            },
+            "detail": {
+                "title": "Hoa Don Ban Hang"
+            },
+            "ngayBan": "Ngay Ban",
+            "tongTienHD": "Tong Tien HD",
+            "hdbhchitiet": "Hdbhchitiet"
+        }
+    }
+}

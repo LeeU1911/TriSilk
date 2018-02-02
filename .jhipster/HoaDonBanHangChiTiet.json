@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "hoadonbanhang",
+            "otherEntityName": "hoaDonBanHang",
+            "otherEntityRelationshipName": "hdbhchitiet"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "sanPham",
+            "otherEntityName": "sanPham",
+            "otherEntityField": "tenSanPham"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "soMet",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "donGia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tongTien",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180202143102",
+    "entityTableName": "hoa_don_ban_hang_chi_tiet",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}
