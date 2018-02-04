@@ -1,32 +1,33 @@
 //Chua ma~ cay vai? nhu 23-4P, 2311-7
 //Co the chua
 entity MaSanPham {
-	productId String,
-    createdDate LocalDate,
+	productId String required,
+    createdDate LocalDate required,
 }
 
 entity SanPham {
-	ngayTao LocalDate, //Ngày nhập hàng
+	ngayTao LocalDate required, //Ngày nhập hàng
     khoRong String, //khổ rộng(vd: 1.5m)
-    met String, //Số mét
-    trongLuong String, //Trọng lượng
+    somet Float required, //Số mét
+    trongLuong Float, //Trọng lượng
     tenSanPham String,
-	donGia String,
-	tongTien String,
-    metConLai String,
+	donGia Float required,
+	tongTien Float,
+    metConLai Float,
 
 }
 
 entity HoaDonBanHang {
-	ngayBan LocalDate,
-    tongTienHD String,
+	ngayBan LocalDate required,
+    tongTienHD Float,
+    tenkhachhang String,
 }
 
 //khi ban san pham, chon ten san pham, nhap so met can ban.
 entity HoaDonBanHangChiTiet {
-    soMet String,
-    donGia String,
-    tongTien String,
+    soMet Float required,
+    donGia Float required,
+    tongTien Float,
 }
 
 relationship OneToMany {

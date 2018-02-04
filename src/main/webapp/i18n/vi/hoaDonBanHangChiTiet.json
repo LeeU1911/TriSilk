@@ -3,24 +3,24 @@
     "triSilkApp": {
         "hoaDonBanHangChiTiet" : {
             "home": {
-                "title": "Hoa Don Ban Hang Chi Tiets",
-                "createLabel": "Thêm mới một Hoa Don Ban Hang Chi Tiet",
-                "createOrEditLabel": "Thêm mới hoặc cập nhật Hoa Don Ban Hang Chi Tiet"
+                "title": "Hóa đơn bán hàng chi tiết",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật"
             },
-            "created": "Một Hoa Don Ban Hang Chi Tiet mới được tạo với định danh {{ param }}",
-            "updated": "Một Hoa Don Ban Hang Chi Tiet cập nhật với định danh {{ param }}",
-            "deleted": "Một Hoa Don Ban Hang Chi Tiet đã xóa với định danh {{ param }}",
+            "created": "Một hóa đơn bán hàng chi tiết mới được tạo với định danh {{ param }}",
+            "updated": "Một hóa đơn bán hàng chi tiết cập nhật với định danh {{ param }}",
+            "deleted": "Một hóa đơn bán hàng chi tiết đã xóa với định danh {{ param }}",
             "delete": {
-                "question": "Bạn có chắc là muốn xóa Hoa Don Ban Hang Chi Tiet {{ id }}?"
+                "question": "Bạn có chắc là muốn xóa hóa đơn bán hàng chi tiết {{ id }}?"
             },
             "detail": {
-                "title": "Hoa Don Ban Hang Chi Tiet"
+                "title": "Hóa đơn bán hàng chi tiết"
             },
-            "soMet": "So Met",
-            "donGia": "Don Gia",
-            "tongTien": "Tong Tien",
-            "hoadonbanhang": "Hoadonbanhang",
-            "sanPham": "San Pham"
+            "soMet": "Số mét",
+            "donGia": "Đơn giá",
+            "tongTien": "Tổng tiền",
+            "hoadonbanhang": "Hóa đơn bán hàng",
+            "sanPham": "Sản phẩm"
         }
     }
 }

@@ -3,22 +3,22 @@
     "triSilkApp": {
         "hoaDonBanHang" : {
             "home": {
-                "title": "Hoa Don Ban Hangs",
-                "createLabel": "Thêm mới một Hoa Don Ban Hang",
-                "createOrEditLabel": "Thêm mới hoặc cập nhật Hoa Don Ban Hang"
+                "title": "Hóa đơn bán hàng",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật hóa đơn bán hàng"
             },
-            "created": "Một Hoa Don Ban Hang mới được tạo với định danh {{ param }}",
-            "updated": "Một Hoa Don Ban Hang cập nhật với định danh {{ param }}",
-            "deleted": "Một Hoa Don Ban Hang đã xóa với định danh {{ param }}",
+            "created": "Một hóa đơn bán hàng mới được tạo với định danh {{ param }}",
+            "updated": "Một hóa đơn bán hàng cập nhật với định danh {{ param }}",
+            "deleted": "Một hóa đơn bán hàng đã xóa với định danh {{ param }}",
             "delete": {
-                "question": "Bạn có chắc là muốn xóa Hoa Don Ban Hang {{ id }}?"
+                "question": "Bạn có chắc là muốn xóa hóa đơn bán hàng {{ id }}?"
             },
             "detail": {
-                "title": "Hoa Don Ban Hang"
+                "title": "Hóa đơn bán hàng"
             },
-            "ngayBan": "Ngay Ban",
-            "tongTienHD": "Tong Tien HD",
-            "hdbhchitiet": "Hdbhchitiet"
+            "ngayBan": "Ngày bán",
+            "tongTienHD": "Tổng tiền hóa đơn",
+            "hdbhchitiet": "Hóa đơn bán hàng chi tiết"
         }
     }
 }
