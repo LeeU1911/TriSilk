@@ -45,7 +45,7 @@ export class SanPhamDialogComponent implements OnInit {
     save() {
         this.isSaving = true;
         this.sanPham.tenSanPham =
-            `${this.masanphams.filter(obj => obj.id === this.sanPham.maSanPham.id)[0].productId} - ${this.sanPham.ngayTao.year}/${this.sanPham.ngayTao.month}/${this.sanPham.ngayTao.day}`;
+            `${this.masanphams.filter((obj) => obj.id === this.sanPham.maSanPham.id)[0].productId} - ${this.sanPham.ngayTao.year}/${this.sanPham.ngayTao.month}/${this.sanPham.ngayTao.day}`;
         if (this.sanPham.id !== undefined) {
             this.subscribeToSaveResponse(
                 this.sanPhamService.update(this.sanPham));
