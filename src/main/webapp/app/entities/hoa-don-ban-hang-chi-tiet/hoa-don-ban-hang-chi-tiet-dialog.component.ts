@@ -44,6 +44,7 @@ export class HoaDonBanHangChiTietDialogComponent implements OnInit {
 
     save() {
         this.isSaving = true;
+        this.hoaDonBanHangChiTiet.tongTien = this.hoaDonBanHangChiTiet.soMet * this.hoaDonBanHangChiTiet.donGia;
         if (this.hoaDonBanHangChiTiet.id !== undefined) {
             this.subscribeToSaveResponse(
                 this.hoaDonBanHangChiTietService.update(this.hoaDonBanHangChiTiet));
