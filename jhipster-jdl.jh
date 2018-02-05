@@ -1,0 +1,32 @@
+//Chua ma~ cay vai? nhu 23-4P, 2311-7
+//Co the chua
+entity MaSanPham {
+	productId String required,
+    createdDate LocalDate required,
+}
+
+entity SanPham {
+	ngayTao LocalDate required, //Ngày nhập hàng
+    khoRong String, //khổ rộng(vd: 1.5m)
+    soMet Float required, //Số mét
+    trongLuong Float, //Trọng lượng
+    tenSanPham String,
+	donGia Float required,
+	tongTien Float,
+    metConLai Float,
+
+}
+
+//khi ban san pham, chon ten san pham, nhap so met can ban.
+entity HoaDonBanHangChiTiet {
+    ngayBan LocalDate required,
+    tenKhachHang String,
+    soMet Float required,
+    donGia Float required,
+    tongTien Float,
+}
+
+relationship OneToMany {
+  SanPham{hdbhchitiet} to HoaDonBanHangChiTiet{sanPham(tenSanPham)}
+  MaSanPham{sanPham} to SanPham{maSanPham(productId)}
+}

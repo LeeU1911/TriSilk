@@ -1,0 +1,31 @@
+
+{
+    "triSilkApp": {
+        "sanPham" : {
+            "home": {
+                "title": "Thêm mới sản phẩm",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật sản phẩm"
+            },
+            "created": "Một sản phẩm mới được tạo với định danh {{ param }}",
+            "updated": "Một sản phẩm cập nhật với định danh {{ param }}",
+            "deleted": "Một sản phẩm đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa sản phẩm {{ id }}?"
+            },
+            "detail": {
+                "title": "Sản Phẩm"
+            },
+            "ngayTao": "Ngày tạo",
+            "khoRong": "Khổ rộng",
+            "soMet": "Số mét",
+            "trongLuong": "Trọng lượng",
+            "tenSanPham": "Tên sản phẩm",
+            "donGia": "Đơn giá",
+            "tongTien": "Tổng tiền",
+            "metConLai": "Số mét còn lại",
+            "hdbhchitiet": "Hóa đơn chi tiết",
+            "maSanPham": "Mã sản phẩm"
+        }
+    }
+}

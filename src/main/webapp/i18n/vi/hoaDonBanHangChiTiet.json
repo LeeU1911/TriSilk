@@ -1,0 +1,27 @@
+
+{
+    "triSilkApp": {
+        "hoaDonBanHangChiTiet" : {
+            "home": {
+                "title": "Danh sách sản phẩm đã bán",
+                "createLabel": "Thêm mới",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật"
+            },
+            "created": "Một giao dịch bán được tạo mới với định danh {{ param }}",
+            "updated": "Một giao dịch bán đã được cập nhật với định danh {{ param }}",
+            "deleted": "Một giao dịch bán đã được xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa giao dịch bán{{ id }}?"
+            },
+            "detail": {
+                "title": "Giao dịch bán hàng"
+            },
+            "ngayBan": "Ngày bán",
+            "tenKhachHang": "Tên khách hàng",
+            "soMet": "Số mét",
+            "donGia": "Đơn giá",
+            "tongTien": "Tổng tiền",
+            "sanPham": "Sản phẩm"
+        }
+    }
+}
