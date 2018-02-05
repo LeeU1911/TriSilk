@@ -42,7 +42,7 @@
                 <option [ngValue]="null"></option>
                 <option
                     [ngValue]="sanPhamOption.id === hoaDonBanHangChiTiet.sanPham?.id ? hoaDonBanHangChiTiet.sanPham : sanPhamOption"
-                    *ngFor="let sanPhamOption of sanphams; trackBy: trackSanPhamById">{{sanPhamOption.tenSanPham}}
+                    *ngFor="let sanPhamOption of filter(sanphams); trackBy: trackSanPhamById">{{sanPhamOption.tenSanPham + ' - còn lại: ' + sanPhamOption.metConLai + 'm'}}
                 </option>
             </select>
         </div>

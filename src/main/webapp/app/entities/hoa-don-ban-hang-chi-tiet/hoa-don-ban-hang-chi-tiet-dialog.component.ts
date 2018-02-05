@@ -75,6 +75,12 @@ export class HoaDonBanHangChiTietDialogComponent implements OnInit {
     trackSanPhamById(index: number, item: SanPham) {
         return item.id;
     }
+
+    filter(itemList: SanPham[]): SanPham[]{
+            let result: SanPham[] = [];
+            result = itemList.filter((sanPham) => sanPham.metConLai);
+            return result;
+    }
 }
 
 @Component({
