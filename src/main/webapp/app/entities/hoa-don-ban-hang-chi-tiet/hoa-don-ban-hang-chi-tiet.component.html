@@ -18,27 +18,28 @@
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="ngayBan"><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.ngayBan">Ngay Ban</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="tenKhachHang"><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.tenKhachHang">Ten Khach Hang</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="sanPham.tenSanPham"><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.sanPham">San Pham</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="soMet"><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.soMet">So Met</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="donGia"><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.donGia">Don Gia</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="tongTien"><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.tongTien">Tong Tien</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="sanPham.tenSanPham"><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.sanPham">San Pham</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tenKhachHang"><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.tenKhachHang">Ten Khach Hang</span> <span class="fa fa-sort"></span></th>
             <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let hoaDonBanHangChiTiet of hoaDonBanHangChiTiets ;trackBy: trackId">
-                <td><a [routerLink]="['../hoa-don-ban-hang-chi-tiet', hoaDonBanHangChiTiet.id ]">{{hoaDonBanHangChiTiet.id}}</a></td>
+                <td><a [routerLink]="['../hoa-don-ban-hang-chi-tiet', hoaDonBanHangChiTiet.id ]">{{hoaDonBanHangChiTiet.id}}</a>
+                </td>
                 <td>{{hoaDonBanHangChiTiet.ngayBan | date:'mediumDate'}}</td>
-                <td>{{hoaDonBanHangChiTiet.tenKhachHang}}</td>
+                <td>
+                    <div *ngIf="hoaDonBanHangChiTiet.sanPham">
+                        <a [routerLink]="['../san-pham', hoaDonBanHangChiTiet.sanPham?.id ]">{{hoaDonBanHangChiTiet.sanPham?.tenSanPham}}</a>
+                    </div>
+                </td>
                 <td>{{hoaDonBanHangChiTiet.soMet}}</td>
                 <td>{{hoaDonBanHangChiTiet.donGia}}</td>
                 <td>{{hoaDonBanHangChiTiet.tongTien}}</td>
-                <td>
-                    <div *ngIf="hoaDonBanHangChiTiet.sanPham">
-                        <a [routerLink]="['../san-pham', hoaDonBanHangChiTiet.sanPham?.id ]" >{{hoaDonBanHangChiTiet.sanPham?.tenSanPham}}</a>
-                    </div>
-                </td>
+                <td>{{hoaDonBanHangChiTiet.tenKhachHang}}</td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

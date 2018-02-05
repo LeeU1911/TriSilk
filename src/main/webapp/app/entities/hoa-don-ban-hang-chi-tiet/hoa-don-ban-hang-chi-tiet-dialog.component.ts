@@ -44,6 +44,7 @@ export class HoaDonBanHangChiTietDialogComponent implements OnInit {
 
     save() {
         this.isSaving = true;
+        this.hoaDonBanHangChiTiet.tongTien = this.hoaDonBanHangChiTiet.soMet * this.hoaDonBanHangChiTiet.donGia;
         if (this.hoaDonBanHangChiTiet.id !== undefined) {
             this.subscribeToSaveResponse(
                 this.hoaDonBanHangChiTietService.update(this.hoaDonBanHangChiTiet));
@@ -74,6 +75,12 @@ export class HoaDonBanHangChiTietDialogComponent implements OnInit {
 
     trackSanPhamById(index: number, item: SanPham) {
         return item.id;
+    }
+
+    filter(itemList: SanPham[]): SanPham[] {
+            let result: SanPham[] = [];
+            result = itemList.filter((sanPham) => sanPham.metConLai);
+            return result;
     }
 }
 

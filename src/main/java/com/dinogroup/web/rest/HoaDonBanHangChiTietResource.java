@@ -4,12 +4,14 @@ import com.codahale.metrics.annotation.Timed;
 import com.dinogroup.domain.HoaDonBanHangChiTiet;
 
 import com.dinogroup.repository.HoaDonBanHangChiTietRepository;
+import com.dinogroup.service.SanPhamService;
 import com.dinogroup.web.rest.errors.BadRequestAlertException;
 import com.dinogroup.web.rest.util.HeaderUtil;
 import com.dinogroup.web.rest.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -37,6 +39,9 @@ public class HoaDonBanHangChiTietResource {
 
     private final HoaDonBanHangChiTietRepository hoaDonBanHangChiTietRepository;
 
+    @Autowired
+    private SanPhamService sanPhamService;
+
     public HoaDonBanHangChiTietResource(HoaDonBanHangChiTietRepository hoaDonBanHangChiTietRepository) {
         this.hoaDonBanHangChiTietRepository = hoaDonBanHangChiTietRepository;
     }
@@ -55,6 +60,7 @@ public class HoaDonBanHangChiTietResource {
         if (hoaDonBanHangChiTiet.getId() != null) {
             throw new BadRequestAlertException("A new hoaDonBanHangChiTiet cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        sanPhamService.updateRemainingMetre(hoaDonBanHangChiTiet);
         HoaDonBanHangChiTiet result = hoaDonBanHangChiTietRepository.save(hoaDonBanHangChiTiet);
         return ResponseEntity.created(new URI("/api/hoa-don-ban-hang-chi-tiets/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
@@ -77,6 +83,7 @@ public class HoaDonBanHangChiTietResource {
         if (hoaDonBanHangChiTiet.getId() == null) {
             return createHoaDonBanHangChiTiet(hoaDonBanHangChiTiet);
         }
+        sanPhamService.updateRemainingMetre(hoaDonBanHangChiTiet);
         HoaDonBanHangChiTiet result = hoaDonBanHangChiTietRepository.save(hoaDonBanHangChiTiet);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, hoaDonBanHangChiTiet.getId().toString()))
