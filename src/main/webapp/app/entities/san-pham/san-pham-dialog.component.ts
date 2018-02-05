@@ -50,6 +50,7 @@ export class SanPhamDialogComponent implements OnInit {
             this.subscribeToSaveResponse(
                 this.sanPhamService.update(this.sanPham));
         } else {
+            this.sanPham.metConLai = this.sanPham.soMet;
             this.subscribeToSaveResponse(
                 this.sanPhamService.create(this.sanPham));
         }
