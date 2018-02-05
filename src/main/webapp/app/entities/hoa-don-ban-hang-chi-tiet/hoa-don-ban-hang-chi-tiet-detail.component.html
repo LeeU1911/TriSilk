@@ -1,6 +1,6 @@
+
 <div *ngIf="hoaDonBanHangChiTiet">
-    <h2><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.detail.title">Hoa Don Ban Hang Chi Tiet</span>
-        {{hoaDonBanHangChiTiet.id}}</h2>
+    <h2><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.detail.title">Hoa Don Ban Hang Chi Tiet</span> {{hoaDonBanHangChiTiet.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="row-md jh-entity-details">
@@ -8,13 +8,10 @@
         <dd>
             <span>{{hoaDonBanHangChiTiet.ngayBan | date:'mediumDate'}}</span>
         </dd>
-        <dt><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.sanPham">San Pham</span></dt>
+        <dt><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.tenKhachHang">Ten Khach Hang</span></dt>
         <dd>
-            <div *ngIf="hoaDonBanHangChiTiet.sanPham">
-                <a [routerLink]="['/san-pham', hoaDonBanHangChiTiet.sanPham?.id]">{{hoaDonBanHangChiTiet.sanPham?.tenSanPham}}</a>
-            </div>
+            <span>{{hoaDonBanHangChiTiet.tenKhachHang}}</span>
         </dd>
-
         <dt><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.soMet">So Met</span></dt>
         <dd>
             <span>{{hoaDonBanHangChiTiet.soMet}}</span>
@@ -27,9 +24,11 @@
         <dd>
             <span>{{hoaDonBanHangChiTiet.tongTien}}</span>
         </dd>
-        <dt><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.tenKhachHang">Ten Khach Hang</span></dt>
+        <dt><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.sanPham">San Pham</span></dt>
         <dd>
-            <span>{{hoaDonBanHangChiTiet.tenKhachHang}}</span>
+            <div *ngIf="hoaDonBanHangChiTiet.sanPham">
+                <a [routerLink]="['/san-pham', hoaDonBanHangChiTiet.sanPham?.id]">{{hoaDonBanHangChiTiet.sanPham?.tenSanPham}}</a>
+            </div>
         </dd>
     </dl>
 

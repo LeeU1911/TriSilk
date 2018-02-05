@@ -1,3 +1,4 @@
+
 <div *ngIf="sanPham">
     <h2><span jhiTranslate="triSilkApp.sanPham.detail.title">San Pham</span> {{sanPham.id}}</h2>
     <hr>
@@ -7,11 +8,17 @@
         <dd>
             <span>{{sanPham.ngayTao | date:'mediumDate'}}</span>
         </dd>
-        <dt><span jhiTranslate="triSilkApp.sanPham.maSanPham">Ma San Pham</span></dt>
+        <dt><span jhiTranslate="triSilkApp.sanPham.khoRong">Kho Rong</span></dt>
         <dd>
-            <div *ngIf="sanPham.maSanPham">
-                <a [routerLink]="['/ma-san-pham', sanPham.maSanPham?.id]">{{sanPham.maSanPham?.productId}}</a>
-            </div>
+            <span>{{sanPham.khoRong}}</span>
+        </dd>
+        <dt><span jhiTranslate="triSilkApp.sanPham.soMet">So Met</span></dt>
+        <dd>
+            <span>{{sanPham.soMet}}</span>
+        </dd>
+        <dt><span jhiTranslate="triSilkApp.sanPham.trongLuong">Trong Luong</span></dt>
+        <dd>
+            <span>{{sanPham.trongLuong}}</span>
         </dd>
         <dt><span jhiTranslate="triSilkApp.sanPham.tenSanPham">Ten San Pham</span></dt>
         <dd>
@@ -21,10 +28,6 @@
         <dd>
             <span>{{sanPham.donGia}}</span>
         </dd>
-        <dt><span jhiTranslate="triSilkApp.sanPham.soMet">So Met</span></dt>
-        <dd>
-            <span>{{sanPham.soMet}}</span>
-        </dd>
         <dt><span jhiTranslate="triSilkApp.sanPham.tongTien">Tong Tien</span></dt>
         <dd>
             <span>{{sanPham.tongTien}}</span>
@@ -33,14 +36,11 @@
         <dd>
             <span>{{sanPham.metConLai}}</span>
         </dd>
-        <dt><span jhiTranslate="triSilkApp.sanPham.khoRong">Kho Rong</span></dt>
+        <dt><span jhiTranslate="triSilkApp.sanPham.maSanPham">Ma San Pham</span></dt>
         <dd>
-            <span>{{sanPham.khoRong}}</span>
-        </dd>
-
-        <dt><span jhiTranslate="triSilkApp.sanPham.trongLuong">Trong Luong</span></dt>
-        <dd>
-            <span>{{sanPham.trongLuong}}</span>
+            <div *ngIf="sanPham.maSanPham">
+                <a [routerLink]="['/ma-san-pham', sanPham.maSanPham?.id]">{{sanPham.maSanPham?.productId}}</a>
+            </div>
         </dd>
     </dl>
 

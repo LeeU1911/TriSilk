@@ -1,97 +1,81 @@
 <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
 
     <div class="modal-header">
-        <h4 class="modal-title" id="myHoaDonBanHangChiTietLabel"
-            jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.home.createOrEditLabel">Create or edit a Hoa Don Ban Hang Chi
-            Tiet</h4>
+        <h4 class="modal-title" id="myHoaDonBanHangChiTietLabel" jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.home.createOrEditLabel">Create or edit a Hoa Don Ban Hang Chi Tiet</h4>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                (click)="clear()">&times;
-        </button>
+                (click)="clear()">&times;</button>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
         <div class="form-group" [hidden]="!hoaDonBanHangChiTiet.id">
             <label for="id" jhiTranslate="global.field.id">ID</label>
             <input type="text" class="form-control" id="id" name="id"
-                   [(ngModel)]="hoaDonBanHangChiTiet.id" readonly/>
+                   [(ngModel)]="hoaDonBanHangChiTiet.id" readonly />
         </div>
         <div class="form-group">
-            <label class="form-control-label" jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.ngayBan"
-                   for="field_ngayBan">Ngay Ban</label>
+            <label class="form-control-label" jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.ngayBan" for="field_ngayBan">Ngay Ban</label>
             <div class="input-group">
-                <input id="field_ngayBan" type="text" class="form-control" name="ngayBan" ngbDatepicker
-                       #ngayBanDp="ngbDatepicker" [(ngModel)]="hoaDonBanHangChiTiet.ngayBan"
-                       required/>
+                <input id="field_ngayBan" type="text" class="form-control" name="ngayBan" ngbDatepicker  #ngayBanDp="ngbDatepicker" [(ngModel)]="hoaDonBanHangChiTiet.ngayBan"
+                required/>
                 <span class="input-group-append">
-                    <button type="button" class="btn btn-secondary" (click)="ngayBanDp.toggle()"><i
-                        class="fa fa-calendar"></i></button>
+                    <button type="button" class="btn btn-secondary" (click)="ngayBanDp.toggle()"><i class="fa fa-calendar"></i></button>
                 </span>
             </div>
             <div [hidden]="!(editForm.controls.ngayBan?.dirty && editForm.controls.ngayBan?.invalid)">
                 <small class="form-text text-danger"
-                       [hidden]="!editForm.controls.ngayBan?.errors?.required"
-                       jhiTranslate="entity.validation.required">
-                    This field is required.
+                   [hidden]="!editForm.controls.ngayBan?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
                 </small>
             </div>
         </div>
         <div class="form-group">
-            <label class="form-control-label" jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.sanPham"
-                   for="field_sanPham">San Pham</label>
-            <select class="form-control" id="field_sanPham" name="sanPham" [(ngModel)]="hoaDonBanHangChiTiet.sanPham">
-                <option [ngValue]="null"></option>
-                <option
-                    [ngValue]="sanPhamOption.id === hoaDonBanHangChiTiet.sanPham?.id ? hoaDonBanHangChiTiet.sanPham : sanPhamOption"
-                    *ngFor="let sanPhamOption of filter(sanphams); trackBy: trackSanPhamById">{{sanPhamOption.tenSanPham + ' - còn lại: ' + sanPhamOption.metConLai + 'm'}}
-                </option>
-            </select>
+            <label class="form-control-label" jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.tenKhachHang" for="field_tenKhachHang">Ten Khach Hang</label>
+            <input type="text" class="form-control" name="tenKhachHang" id="field_tenKhachHang"
+                [(ngModel)]="hoaDonBanHangChiTiet.tenKhachHang" />
         </div>
-
         <div class="form-group">
-            <label class="form-control-label" jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.soMet" for="field_soMet">So
-                Met</label>
+            <label class="form-control-label" jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.soMet" for="field_soMet">So Met</label>
             <input type="number" class="form-control" name="soMet" id="field_soMet"
-                   [(ngModel)]="hoaDonBanHangChiTiet.soMet" required/>
+                [(ngModel)]="hoaDonBanHangChiTiet.soMet" required/>
             <div [hidden]="!(editForm.controls.soMet?.dirty && editForm.controls.soMet?.invalid)">
                 <small class="form-text text-danger"
-                       [hidden]="!editForm.controls.soMet?.errors?.required" jhiTranslate="entity.validation.required">
-                    This field is required.
+                   [hidden]="!editForm.controls.soMet?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
                 </small>
                 <small class="form-text text-danger"
-                       [hidden]="!editForm.controls.soMet?.errors?.number" jhiTranslate="entity.validation.number">
+                    [hidden]="!editForm.controls.soMet?.errors?.number" jhiTranslate="entity.validation.number">
                     This field should be a number.
                 </small>
             </div>
         </div>
         <div class="form-group">
-            <label class="form-control-label" jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.donGia" for="field_donGia">Don
-                Gia</label>
+            <label class="form-control-label" jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.donGia" for="field_donGia">Don Gia</label>
             <input type="number" class="form-control" name="donGia" id="field_donGia"
-                   [(ngModel)]="hoaDonBanHangChiTiet.donGia" required/>
+                [(ngModel)]="hoaDonBanHangChiTiet.donGia" required/>
             <div [hidden]="!(editForm.controls.donGia?.dirty && editForm.controls.donGia?.invalid)">
                 <small class="form-text text-danger"
-                       [hidden]="!editForm.controls.donGia?.errors?.required" jhiTranslate="entity.validation.required">
-                    This field is required.
+                   [hidden]="!editForm.controls.donGia?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
                 </small>
                 <small class="form-text text-danger"
-                       [hidden]="!editForm.controls.donGia?.errors?.number" jhiTranslate="entity.validation.number">
+                    [hidden]="!editForm.controls.donGia?.errors?.number" jhiTranslate="entity.validation.number">
                     This field should be a number.
                 </small>
             </div>
         </div>
         <div class="form-group">
-            <label class="form-control-label" jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.tongTien"
-                   for="field_tongTien">Tong Tien</label>
+            <label class="form-control-label" jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.tongTien" for="field_tongTien">Tong Tien</label>
             <input type="number" class="form-control" name="tongTien" id="field_tongTien"
-                   [(ngModel)]="hoaDonBanHangChiTiet.tongTien" disabled/>
-        </div>
-        <div class="form-group">
-            <label class="form-control-label" jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.tenKhachHang"
-                   for="field_tenKhachHang">Ten Khach Hang</label>
-            <input type="text" class="form-control" name="tenKhachHang" id="field_tenKhachHang"
-                   [(ngModel)]="hoaDonBanHangChiTiet.tenKhachHang"/>
+                [(ngModel)]="hoaDonBanHangChiTiet.tongTien" />
         </div>
 
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.sanPham" for="field_sanPham">San Pham</label>
+            <select class="form-control" id="field_sanPham" name="sanPham" [(ngModel)]="hoaDonBanHangChiTiet.sanPham" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sanPhamOption.id === hoaDonBanHangChiTiet.sanPham?.id ? hoaDonBanHangChiTiet.sanPham : sanPhamOption" *ngFor="let sanPhamOption of sanphams; trackBy: trackSanPhamById">{{sanPhamOption.tenSanPham}}</option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">

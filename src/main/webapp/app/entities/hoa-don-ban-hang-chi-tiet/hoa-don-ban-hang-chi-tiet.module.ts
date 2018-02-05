@@ -13,6 +13,7 @@ import {
     HoaDonBanHangChiTietDeleteDialogComponent,
     hoaDonBanHangChiTietRoute,
     hoaDonBanHangChiTietPopupRoute,
+    HoaDonBanHangChiTietResolvePagingParams,
 } from './';
 
 const ENTITY_STATES = [
@@ -43,6 +44,7 @@ const ENTITY_STATES = [
     providers: [
         HoaDonBanHangChiTietService,
         HoaDonBanHangChiTietPopupService,
+        HoaDonBanHangChiTietResolvePagingParams,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

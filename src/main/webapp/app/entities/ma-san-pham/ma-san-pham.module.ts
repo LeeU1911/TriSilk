@@ -13,6 +13,7 @@ import {
     MaSanPhamDeleteDialogComponent,
     maSanPhamRoute,
     maSanPhamPopupRoute,
+    MaSanPhamResolvePagingParams,
 } from './';
 
 const ENTITY_STATES = [
@@ -43,6 +44,7 @@ const ENTITY_STATES = [
     providers: [
         MaSanPhamService,
         MaSanPhamPopupService,
+        MaSanPhamResolvePagingParams,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -13,6 +13,7 @@ import {
     SanPhamDeleteDialogComponent,
     sanPhamRoute,
     sanPhamPopupRoute,
+    SanPhamResolvePagingParams,
 } from './';
 
 const ENTITY_STATES = [
@@ -43,6 +44,7 @@ const ENTITY_STATES = [
     providers: [
         SanPhamService,
         SanPhamPopupService,
+        SanPhamResolvePagingParams,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

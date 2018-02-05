@@ -27,7 +27,7 @@
     "changelogDate": "20180205024808",
     "entityTableName": "ma_san_pham",
     "dto": "no",
-    "pagination": "no",
+    "pagination": "pagination",
     "service": "no",
     "jpaMetamodelFiltering": false
 }

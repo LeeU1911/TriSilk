@@ -42,7 +42,7 @@
     "changelogDate": "20180205024810",
     "entityTableName": "hoa_don_ban_hang_chi_tiet",
     "dto": "no",
-    "pagination": "no",
+    "pagination": "pagination",
     "service": "no",
     "jpaMetamodelFiltering": false
 }

@@ -1,10 +1,9 @@
 <div>
     <h2>
         <span jhiTranslate="triSilkApp.sanPham.home.title">San Phams</span>
-        <button class="btn btn-primary float-right jh-create-entity create-san-pham"
-                [routerLink]="['/', { outlets: { popup: ['san-pham-new'] } }]">
+        <button class="btn btn-primary float-right jh-create-entity create-san-pham" [routerLink]="['/', { outlets: { popup: ['san-pham-new'] } }]">
             <span class="fa fa-plus"></span>
-            <span jhiTranslate="triSilkApp.sanPham.home.createLabel">
+            <span  jhiTranslate="triSilkApp.sanPham.home.createLabel">
             Create new San Pham
             </span>
         </button>
@@ -16,40 +15,36 @@
     <div class="table-responsive" *ngIf="sanPhams">
         <table class="table table-striped">
             <thead>
-            <tr>
-                <th><span jhiTranslate="global.field.id">ID</span></th>
-                <th><span jhiTranslate="triSilkApp.sanPham.ngayTao">Ngay Tao</span></th>
-                <th><span jhiTranslate="triSilkApp.sanPham.maSanPham">Ma San Pham</span></th>
-                <th><span jhiTranslate="triSilkApp.sanPham.tenSanPham">Ten San Pham</span></th>
-                <th><span jhiTranslate="triSilkApp.sanPham.donGia">Don Gia</span></th>
-                <th><span jhiTranslate="triSilkApp.sanPham.soMet">So Met</span></th>
-                <th><span jhiTranslate="triSilkApp.sanPham.tongTien">Tong Tien</span></th>
-                <th><span jhiTranslate="triSilkApp.sanPham.metConLai">Met Con Lai</span></th>
-                <th><span jhiTranslate="triSilkApp.sanPham.khoRong">Kho Rong</span></th>
-                <th><span jhiTranslate="triSilkApp.sanPham.trongLuong">Trong Luong</span></th>
-                <th></th>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ngayTao"><span jhiTranslate="triSilkApp.sanPham.ngayTao">Ngay Tao</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="khoRong"><span jhiTranslate="triSilkApp.sanPham.khoRong">Kho Rong</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="soMet"><span jhiTranslate="triSilkApp.sanPham.soMet">So Met</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="trongLuong"><span jhiTranslate="triSilkApp.sanPham.trongLuong">Trong Luong</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tenSanPham"><span jhiTranslate="triSilkApp.sanPham.tenSanPham">Ten San Pham</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="donGia"><span jhiTranslate="triSilkApp.sanPham.donGia">Don Gia</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tongTien"><span jhiTranslate="triSilkApp.sanPham.tongTien">Tong Tien</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="metConLai"><span jhiTranslate="triSilkApp.sanPham.metConLai">Met Con Lai</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="maSanPham.productId"><span jhiTranslate="triSilkApp.sanPham.maSanPham">Ma San Pham</span> <span class="fa fa-sort"></span></th>
+            <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let sanPham of sanPhams ;trackBy: trackId">
                 <td><a [routerLink]="['../san-pham', sanPham.id ]">{{sanPham.id}}</a></td>
                 <td>{{sanPham.ngayTao | date:'mediumDate'}}</td>
-                <td>
-                    <div *ngIf="sanPham.maSanPham">
-                        <a [routerLink]="['../ma-san-pham', sanPham.maSanPham?.id ]">{{sanPham.maSanPham?.productId}}</a>
-                    </div>
-                </td>
+                <td>{{sanPham.khoRong}}</td>
+                <td>{{sanPham.soMet}}</td>
+                <td>{{sanPham.trongLuong}}</td>
                 <td>{{sanPham.tenSanPham}}</td>
                 <td>{{sanPham.donGia}}</td>
-                <td>{{sanPham.soMet}}</td>
                 <td>{{sanPham.tongTien}}</td>
                 <td>{{sanPham.metConLai}}</td>
-                <td>{{sanPham.khoRong}}</td>
-                <td>{{sanPham.trongLuong}}</td>
-
-
-
-
+                <td>
+                    <div *ngIf="sanPham.maSanPham">
+                        <a [routerLink]="['../ma-san-pham', sanPham.maSanPham?.id ]" >{{sanPham.maSanPham?.productId}}</a>
+                    </div>
+                </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
@@ -79,5 +74,13 @@
             </tr>
             </tbody>
         </table>
+    </div>
+    <div *ngIf="sanPhams && sanPhams.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
     </div>
 </div>

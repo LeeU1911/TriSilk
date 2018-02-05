@@ -10,6 +10,9 @@
                 "maSanPham": "Mã sản phẩm",
                 "sanPham": "Mua sản phẩm",
                 "hoaDonBanHangChiTiet": "Bán sản phẩm",
+                "maSanPham": "Ma San Pham",
+                "sanPham": "San Pham",
+                "hoaDonBanHangChiTiet": "Hoa Don Ban Hang Chi Tiet",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

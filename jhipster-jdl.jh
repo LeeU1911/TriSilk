@@ -30,3 +30,7 @@ relationship OneToMany {
   SanPham{hdbhchitiet} to HoaDonBanHangChiTiet{sanPham(tenSanPham)}
   MaSanPham{sanPham} to SanPham{maSanPham(productId)}
 }
+
+paginate MaSanPham with pagination
+paginate SanPham with pagination
+paginate HoaDonBanHangChiTiet with pagination

@@ -6,9 +6,14 @@ import com.dinogroup.domain.SanPham;
 import com.dinogroup.repository.SanPhamRepository;
 import com.dinogroup.web.rest.errors.BadRequestAlertException;
 import com.dinogroup.web.rest.util.HeaderUtil;
+import com.dinogroup.web.rest.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -81,14 +86,17 @@ public class SanPhamResource {
     /**
      * GET  /san-phams : get all the sanPhams.
      *
+     * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of sanPhams in body
      */
     @GetMapping("/san-phams")
     @Timed
-    public List<SanPham> getAllSanPhams() {
-        log.debug("REST request to get all SanPhams");
-        return sanPhamRepository.findAll();
-        }
+    public ResponseEntity<List<SanPham>> getAllSanPhams(Pageable pageable) {
+        log.debug("REST request to get a page of SanPhams");
+        Page<SanPham> page = sanPhamRepository.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/san-phams");
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
 
     /**
      * GET  /san-phams/:id : get the "id" sanPham.
