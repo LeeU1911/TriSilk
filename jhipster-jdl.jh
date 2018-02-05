@@ -8,7 +8,7 @@ entity MaSanPham {
 entity SanPham {
 	ngayTao LocalDate required, //Ngày nhập hàng
     khoRong String, //khổ rộng(vd: 1.5m)
-    somet Float required, //Số mét
+    soMet Float required, //Số mét
     trongLuong Float, //Trọng lượng
     tenSanPham String,
 	donGia Float required,
@@ -20,7 +20,7 @@ entity SanPham {
 entity HoaDonBanHang {
 	ngayBan LocalDate required,
     tongTienHD Float,
-    tenkhachhang String,
+    tenKhachHang String,
 }
 
 //khi ban san pham, chon ten san pham, nhap so met can ban.
