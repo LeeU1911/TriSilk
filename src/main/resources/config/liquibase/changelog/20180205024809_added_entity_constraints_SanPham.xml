@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity SanPham.
+    -->
+    <changeSet id="20180205024809-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="ma_san_pham_id"
+                                 baseTableName="san_pham"
+                                 constraintName="fk_san_pham_ma_san_pham_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ma_san_pham"/>
+
+    </changeSet>
+</databaseChangeLog>
