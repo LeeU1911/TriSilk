@@ -1,9 +1,10 @@
 <div>
     <h2>
         <span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.home.title">Hoa Don Ban Hang Chi Tiets</span>
-        <button class="btn btn-primary float-right jh-create-entity create-hoa-don-ban-hang-chi-tiet" [routerLink]="['/', { outlets: { popup: ['hoa-don-ban-hang-chi-tiet-new'] } }]">
+        <button class="btn btn-primary float-right jh-create-entity create-hoa-don-ban-hang-chi-tiet"
+                [routerLink]="['/', { outlets: { popup: ['hoa-don-ban-hang-chi-tiet-new'] } }]">
             <span class="fa fa-plus"></span>
-            <span  jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.home.createLabel">
+            <span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.home.createLabel">
             Create new Hoa Don Ban Hang Chi Tiet
             </span>
         </button>
@@ -16,29 +17,30 @@
         <table class="table table-striped">
             <thead>
             <tr>
-            <th><span jhiTranslate="global.field.id">ID</span></th>
-            <th><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.ngayBan">Ngay Ban</span></th>
-            <th><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.tenKhachHang">Ten Khach Hang</span></th>
-            <th><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.soMet">So Met</span></th>
-            <th><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.donGia">Don Gia</span></th>
-            <th><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.tongTien">Tong Tien</span></th>
-            <th><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.sanPham">San Pham</span></th>
-            <th></th>
+                <th><span jhiTranslate="global.field.id">ID</span></th>
+                <th><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.ngayBan">Ngay Ban</span></th>
+                <th><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.sanPham">San Pham</span></th>
+                <th><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.soMet">So Met</span></th>
+                <th><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.donGia">Don Gia</span></th>
+                <th><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.tongTien">Tong Tien</span></th>
+                <th><span jhiTranslate="triSilkApp.hoaDonBanHangChiTiet.tenKhachHang">Ten Khach Hang</span></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let hoaDonBanHangChiTiet of hoaDonBanHangChiTiets ;trackBy: trackId">
-                <td><a [routerLink]="['../hoa-don-ban-hang-chi-tiet', hoaDonBanHangChiTiet.id ]">{{hoaDonBanHangChiTiet.id}}</a></td>
+                <td><a [routerLink]="['../hoa-don-ban-hang-chi-tiet', hoaDonBanHangChiTiet.id ]">{{hoaDonBanHangChiTiet.id}}</a>
+                </td>
                 <td>{{hoaDonBanHangChiTiet.ngayBan | date:'mediumDate'}}</td>
-                <td>{{hoaDonBanHangChiTiet.tenKhachHang}}</td>
+                <td>
+                    <div *ngIf="hoaDonBanHangChiTiet.sanPham">
+                        <a [routerLink]="['../san-pham', hoaDonBanHangChiTiet.sanPham?.id ]">{{hoaDonBanHangChiTiet.sanPham?.tenSanPham}}</a>
+                    </div>
+                </td>
                 <td>{{hoaDonBanHangChiTiet.soMet}}</td>
                 <td>{{hoaDonBanHangChiTiet.donGia}}</td>
                 <td>{{hoaDonBanHangChiTiet.tongTien}}</td>
-                <td>
-                    <div *ngIf="hoaDonBanHangChiTiet.sanPham">
-                        <a [routerLink]="['../san-pham', hoaDonBanHangChiTiet.sanPham?.id ]" >{{hoaDonBanHangChiTiet.sanPham?.tenSanPham}}</a>
-                    </div>
-                </td>
+                <td>{{hoaDonBanHangChiTiet.tenKhachHang}}</td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
