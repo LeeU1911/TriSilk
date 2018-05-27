@@ -18,6 +18,24 @@
                     </span>
                 </a>
             </li>
+            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
+                    <span>
+                        <i class="fa fa-th-list" aria-hidden="true"></i>
+                        <span jhiTranslate="global.menu.report.main">
+                            Report
+                        </span>
+                    </span>
+                </a>
+                <ul class="dropdown-menu" ngbDropdownMenu>
+                    <li>
+                        <a class="dropdown-item" routerLink="bao-cao-ton-kho" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
+                            <span jhiTranslate="global.menu.report.baoCaoTonKho">Báo Cáo Hàng tồn</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
             <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
@@ -32,19 +50,19 @@
                     <li>
                         <a class="dropdown-item" routerLink="ma-san-pham" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.entities.maSanPham">Ma San Pham</span>
+                            <span jhiTranslate="global.menu.entities.maSanPham">Mã Sản Phẩm</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="san-pham" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.entities.sanPham">San Pham</span>
+                            <span jhiTranslate="global.menu.entities.sanPham">Sản Phẩm</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="hoa-don-ban-hang-chi-tiet" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.entities.hoaDonBanHangChiTiet">Hoa Don Ban Hang Chi Tiet</span>
+                            <span jhiTranslate="global.menu.entities.hoaDonBanHangChiTiet">Hóa Đơn Bán Hàng Chi Tiết</span>
                         </a>
                     </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->

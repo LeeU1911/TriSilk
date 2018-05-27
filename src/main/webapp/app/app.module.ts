@@ -15,6 +15,7 @@ import { TriSilkHomeModule } from './home/home.module';
 import { TriSilkAdminModule } from './admin/admin.module';
 import { TriSilkAccountModule } from './account/account.module';
 import { TriSilkEntityModule } from './entities/entity.module';
+import { TriSilkReportModule } from './report/report.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 import { StateStorageService } from './shared/auth/state-storage.service';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
@@ -38,6 +39,7 @@ import {
         TriSilkAdminModule,
         TriSilkAccountModule,
         TriSilkEntityModule,
+        TriSilkReportModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [

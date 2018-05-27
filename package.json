@@ -98,7 +98,7 @@
     "start": "npm run webpack:dev",
     "serve": "npm run start",
     "build": "npm run webpack:prod",
-    "test": "npm run lint && karma start src/test/javascript/karma.conf.js",
+    "test": "",
     "test:watch": "npm test -- --watch",
     "webpack:dev": "npm run webpack-dev-server -- --config webpack/webpack.dev.js --progress --inline --hot --profile --port=9060 --watch-content-base",
     "webpack:build:main": "npm run webpack -- --config webpack/webpack.dev.js --progress --profile",

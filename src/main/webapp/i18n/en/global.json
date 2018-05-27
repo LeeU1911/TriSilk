@@ -7,10 +7,14 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
-                "maSanPham": "Ma San Pham",
-                "sanPham": "San Pham",
-                "hoaDonBanHangChiTiet": "Hoa Don Ban Hang Chi Tiet",
+                "maSanPham": "Product Ids",
+                "sanPham": "Products",
+                "hoaDonBanHangChiTiet": "Order Details",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+            },
+            "report": {
+                "main": "report",
+                "baoCaoTonKho":"inventory reports"
             },
             "account": {
                 "main": "Account",

@@ -60,8 +60,8 @@ public class HoaDonBanHangChiTietResource {
         if (hoaDonBanHangChiTiet.getId() != null) {
             throw new BadRequestAlertException("A new hoaDonBanHangChiTiet cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        sanPhamService.updateRemainingMetre(hoaDonBanHangChiTiet);
         HoaDonBanHangChiTiet result = hoaDonBanHangChiTietRepository.save(hoaDonBanHangChiTiet);
+        sanPhamService.updateRemainingMetre(hoaDonBanHangChiTiet.getSanPham().getId());
         return ResponseEntity.created(new URI("/api/hoa-don-ban-hang-chi-tiets/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -83,8 +83,8 @@ public class HoaDonBanHangChiTietResource {
         if (hoaDonBanHangChiTiet.getId() == null) {
             return createHoaDonBanHangChiTiet(hoaDonBanHangChiTiet);
         }
-        sanPhamService.updateRemainingMetre(hoaDonBanHangChiTiet);
         HoaDonBanHangChiTiet result = hoaDonBanHangChiTietRepository.save(hoaDonBanHangChiTiet);
+        sanPhamService.updateRemainingMetre(hoaDonBanHangChiTiet.getSanPham().getId());
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, hoaDonBanHangChiTiet.getId().toString()))
             .body(result);
@@ -129,7 +129,10 @@ public class HoaDonBanHangChiTietResource {
     @Timed
     public ResponseEntity<Void> deleteHoaDonBanHangChiTiet(@PathVariable Long id) {
         log.debug("REST request to delete HoaDonBanHangChiTiet : {}", id);
+        HoaDonBanHangChiTiet hoaDonBanHangChiTiet = hoaDonBanHangChiTietRepository.getOne(id);
+        long sanPhamId=hoaDonBanHangChiTiet.getSanPham().getId();
         hoaDonBanHangChiTietRepository.delete(id);
+        sanPhamService.updateRemainingMetre(sanPhamId);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

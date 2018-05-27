@@ -7,13 +7,14 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Nhập liệu",
-                "maSanPham": "Mã sản phẩm",
-                "sanPham": "Mua sản phẩm",
-                "hoaDonBanHangChiTiet": "Bán sản phẩm",
-                "maSanPham": "Ma San Pham",
-                "sanPham": "San Pham",
-                "hoaDonBanHangChiTiet": "Hoa Don Ban Hang Chi Tiet",
+                "maSanPham": "Mã Sản Phẩm",
+                "sanPham": "Sản Phẩm",
+                "hoaDonBanHangChiTiet": "Hóa Đơn Bán Hàng Chi Tiết",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+            },
+            "report": {
+                "main": "Báo Cáo",
+                "baoCaoTonKho":"Báo Cáo Tồn Kho"
             },
             "account": {
                 "main": "Tài khoản",
@@ -88,7 +89,7 @@
             "id": "ID"
         },
         "ribbon": {
-            "dev":"Phát triển"
+            "dev": "Phát triển"
         },
         "item-count": "Showing {{first}} - {{second}} of {{total}} items."
     },

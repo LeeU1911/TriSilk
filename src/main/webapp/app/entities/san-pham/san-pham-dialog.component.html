@@ -45,12 +45,7 @@
                 </option>
             </select>
         </div>
-        <div class="form-group">
-            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.tenSanPham" for="field_tenSanPham">Ten
-                San Pham</label>
-            <input type="text" class="form-control" name="tenSanPham" id="field_tenSanPham"
-                   [(ngModel)]="sanPham.tenSanPham" disabled/>
-        </div>
+
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.donGia" for="field_donGia">Don
                 Gia</label>
@@ -83,6 +78,25 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.khoRong" for="field_khoRong">Kho
+                Rong</label>
+            <input type="text" class="form-control" name="khoRong" id="field_khoRong"
+                   [(ngModel)]="sanPham.khoRong"/>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.trongLuong" for="field_trongLuong">Trong
+                Luong</label>
+            <input type="number" class="form-control" name="trongLuong" id="field_trongLuong"
+                   [(ngModel)]="sanPham.trongLuong" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.tenSanPham" for="field_tenSanPham">Ten
+                San Pham</label>
+            <input type="text" class="form-control" name="tenSanPham" id="field_tenSanPham"
+                   [(ngModel)]="sanPham.tenSanPham"
+                   value="{{ toDateString()}}" disabled/>
+        </div>
+        <div class="form-group">
             <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.tongTien" for="field_tongTien">Tong Tien</label>
             <input type="number" class="form-control" name="tongTien" id="field_tongTien"
                    [(ngModel)]="sanPham.tongTien" disabled/>
@@ -93,18 +107,7 @@
                    [(ngModel)]="sanPham.metConLai" disabled/>
         </div>
 
-        <div class="form-group">
-            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.khoRong" for="field_khoRong">Kho
-                Rong</label>
-            <input type="text" class="form-control" name="khoRong" id="field_khoRong"
-                   [(ngModel)]="sanPham.khoRong"/>
-        </div>
-        <div class="form-group">
-            <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.trongLuong" for="field_trongLuong">Trong
-                Luong</label>
-            <input type="number" class="form-control" name="trongLuong" id="field_trongLuong"
-                   [(ngModel)]="sanPham.trongLuong"/>
-        </div>
+
 
 
     </div>

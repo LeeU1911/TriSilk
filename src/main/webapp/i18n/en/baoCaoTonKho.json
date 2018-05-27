@@ -1,0 +1,27 @@
+
+{
+    "triSilkApp": {
+        "baoCaoTonKho" : {
+            "home": {
+                "title": "Bao Cao Ton Kho",
+                "createLabel": "Create a new Hoa Don Ban Hang Chi Tiet",
+                "createOrEditLabel": "Create or edit a Hoa Don Ban Hang Chi Tiet"
+            },
+            "created": "A new Hoa Don Ban Hang Chi Tiet is created with identifier {{ param }}",
+            "updated": "A Hoa Don Ban Hang Chi Tiet is updated with identifier {{ param }}",
+            "deleted": "A Hoa Don Ban Hang Chi Tiet is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Hoa Don Ban Hang Chi Tiet {{ id }}?"
+            },
+            "detail": {
+                "title": "Hoa Don Ban Hang Chi Tiet"
+            },
+            "ngayBan": "Ngay Ban",
+            "tenKhachHang": "Ten Khach Hang",
+            "soMet": "So Met",
+            "donGia": "Don Gia",
+            "tongTien": "Tong Tien",
+            "sanPham": "San Pham"
+        }
+    }
+}

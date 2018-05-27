@@ -27,7 +27,7 @@
             <label class="form-control-label" jhiTranslate="triSilkApp.maSanPham.createdDate" for="field_createdDate">Created Date</label>
             <div class="input-group">
                 <input id="field_createdDate" type="text" class="form-control" name="createdDate" ngbDatepicker  #createdDateDp="ngbDatepicker" [(ngModel)]="maSanPham.createdDate"
-                required/>
+                required />
                 <span class="input-group-append">
                     <button type="button" class="btn btn-secondary" (click)="createdDateDp.toggle()"><i class="fa fa-calendar"></i></button>
                 </span>

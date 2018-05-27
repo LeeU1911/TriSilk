@@ -9,11 +9,19 @@ import { JhiEventManager } from 'ng-jhipster';
 import { MaSanPham } from './ma-san-pham.model';
 import { MaSanPhamPopupService } from './ma-san-pham-popup.service';
 import { MaSanPhamService } from './ma-san-pham.service';
+import {NgbDateParserFormatterEsMX} from '../../shared/datepicker.format';
+import { NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+
+const now = new Date();
+
 
 @Component({
     selector: 'jhi-ma-san-pham-dialog',
-    templateUrl: './ma-san-pham-dialog.component.html'
+    templateUrl: './ma-san-pham-dialog.component.html',
+      providers: [        {provide: NgbDateParserFormatter, useClass: NgbDateParserFormatterEsMX}]
+
 })
+
 export class MaSanPhamDialogComponent implements OnInit {
 
     maSanPham: MaSanPham;
@@ -29,6 +37,7 @@ export class MaSanPhamDialogComponent implements OnInit {
 
     ngOnInit() {
         this.isSaving = false;
+        this.maSanPham.createdDate= {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
     }
 
     clear() {
@@ -61,6 +70,9 @@ export class MaSanPhamDialogComponent implements OnInit {
         this.isSaving = false;
     }
 }
+
+
+
 
 @Component({
     selector: 'jhi-ma-san-pham-popup',

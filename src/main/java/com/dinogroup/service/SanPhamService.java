@@ -2,6 +2,7 @@ package com.dinogroup.service;
 
 import com.dinogroup.domain.HoaDonBanHangChiTiet;
 import com.dinogroup.domain.SanPham;
+import com.dinogroup.repository.HoaDonBanHangChiTietRepository;
 import com.dinogroup.repository.SanPhamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,12 +13,16 @@ public class SanPhamService {
     @Autowired
     private SanPhamRepository sanPhamRepository;
 
-    public void updateRemainingMetre(HoaDonBanHangChiTiet hoaDonBanHangChiTiet){
-        SanPham sanPham = sanPhamRepository.findOne(hoaDonBanHangChiTiet.getSanPham().getId());
+    @Autowired
+    private HoaDonBanHangChiTietRepository hoaDonBanHangChiTietRepository;
+
+    public void updateRemainingMetre(long sanPhamId ){
+        SanPham sanPham = sanPhamRepository.findOne(sanPhamId);
         if (sanPham == null) {
             return;
         }
-        sanPham.setMetConLai(sanPham.getMetConLai() - hoaDonBanHangChiTiet.getSoMet());
+        Float tongSoMet = hoaDonBanHangChiTietRepository.tongSoMet(sanPham);
+        sanPham.setMetConLai(sanPham.getSoMet() - tongSoMet);
         sanPhamRepository.save(sanPham);
     }
 }
