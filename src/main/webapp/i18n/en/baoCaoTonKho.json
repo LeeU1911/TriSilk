@@ -4,7 +4,7 @@
         "baoCaoTonKho" : {
             "home": {
                 "title": "Bao Cao Ton Kho",
-                "createLabel": "Create a new Hoa Don Ban Hang Chi Tiet",
+                "export": "export",
                 "createOrEditLabel": "Create or edit a Hoa Don Ban Hang Chi Tiet"
             },
             "created": "A new Hoa Don Ban Hang Chi Tiet is created with identifier {{ param }}",

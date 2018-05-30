@@ -1,10 +1,10 @@
 <div>
     <h2>
         <span jhiTranslate="triSilkApp.sanPham.home.title">San Phams</span>
-        <button class="btn btn-primary float-right jh-create-entity create-san-pham" [routerLink]="['/', { outlets: { popup: ['san-pham-new'] } }]">
+        <button class="btn btn-primary float-right jh-create-entity create-san-pham"  (click)='export()'>
             <span class="fa fa-plus"></span>
-            <span  jhiTranslate="triSilkApp.sanPham.home.createLabel">
-            Create new San Pham
+            <span  jhiTranslate="triSilkApp.baoCaoTonKho.home.export">
+            In báo cáo
             </span>
         </button>
     </h2>

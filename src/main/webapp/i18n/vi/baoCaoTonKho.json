@@ -4,7 +4,7 @@
         "baoCaoTonKho" : {
             "home": {
                 "title": "Báo cáo tồn kho",
-                "createLabel": "Thêm mới",
+                "export": "In báo cáo",
                 "createOrEditLabel": "Thêm mới hoặc cập nhật"
             },
             "created": "Một giao dịch bán được tạo mới với định danh {{ param }}",

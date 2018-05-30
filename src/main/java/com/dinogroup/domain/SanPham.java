@@ -29,30 +29,30 @@ public class SanPham implements Serializable {
 
     @NotNull
     @Column(name = "ngay_tao", nullable = false)
-    private LocalDate ngayTao;
+    private LocalDate ngayTao = LocalDate.now();
 
     @Column(name = "kho_rong")
-    private String khoRong;
+    private String khoRong = "";
 
     @NotNull
     @Column(name = "so_met", nullable = false)
-    private Float soMet;
+    private Float soMet = 0f;
 
     @Column(name = "trong_luong")
-    private Float trongLuong;
+    private Float trongLuong = 0f;
 
     @Column(name = "ten_san_pham")
-    private String tenSanPham;
+    private String tenSanPham = "";
 
     @NotNull
     @Column(name = "don_gia", nullable = false)
-    private Float donGia;
+    private Float donGia = 0f;
 
     @Column(name = "tong_tien")
-    private Float tongTien;
+    private Float tongTien = 0f;
 
     @Column(name = "met_con_lai")
-    private Float metConLai;
+    private Float metConLai = 0f;
 
     @OneToMany(mappedBy = "sanPham")
     @JsonIgnore

@@ -7,6 +7,7 @@ import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 import { SanPham } from './bao-cao-ton-kho.model';
 import { SanPhamService } from './bao-cao-ton-kho.service';
 import { ITEMS_PER_PAGE, Principal } from '../../shared';
+import { SERVER_API_URL } from '../../app.constants';
 
 @Component({
     selector: 'jhi-bao-cao-ton-kho',
@@ -107,7 +108,10 @@ currentAccount: any;
         }
         return result;
     }
+    export(){
+    window.open(SERVER_API_URL+"export/sanphams");
 
+    }
     private onSuccess(data, headers) {
         this.links = this.parseLinks.parse(headers.get('link'));
         this.totalItems = headers.get('X-Total-Count');
