@@ -18,6 +18,9 @@ logging:
         ROOT: INFO
         com.dinogroup: INFO
         io.github.jhipster: INFO
+noti:
+    hook: https://hooks.zapier.com/hooks/catch/2274589/aal5zz/
+    alert-bound: 7
 
 spring:
     devtools:
@@ -56,7 +59,7 @@ spring:
 
 liquibase:
     contexts: prod
-
+    enabled: false
 # ===================================================================
 # To enable SSL, generate a certificate using:
 # keytool -genkey -alias TriSilk -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650

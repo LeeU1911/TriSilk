@@ -31,6 +31,11 @@ public class UserDTO {
     @Size(max = 50)
     private String lastName;
 
+    private Boolean isNoti;
+
+    @Size(max = 50)
+    private String phone;
+
     @Email
     @Size(min = 5, max = 100)
     private String email;
@@ -62,6 +67,8 @@ public class UserDTO {
         this.login = user.getLogin();
         this.firstName = user.getFirstName();
         this.lastName = user.getLastName();
+        this.isNoti = user.getNoti();
+        this.phone = user.getPhone();
         this.email = user.getEmail();
         this.activated = user.getActivated();
         this.imageUrl = user.getImageUrl();
@@ -73,6 +80,22 @@ public class UserDTO {
         this.authorities = user.getAuthorities().stream()
             .map(Authority::getName)
             .collect(Collectors.toSet());
+    }
+
+    public Boolean getNoti() {
+        return isNoti;
+    }
+
+    public void setNoti(Boolean noti) {
+        isNoti = noti;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public Long getId() {

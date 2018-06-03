@@ -41,6 +41,8 @@
             "language": "Language"
         },
         "form": {
+            "phone":"Phone",
+            "phone.placeholder":"your phone number",
             "username": "Username",
             "username.placeholder": "Your username",
             "newpassword": "New password",

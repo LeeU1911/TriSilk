@@ -54,6 +54,14 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(name = "last_name", length = 50)
     private String lastName;
 
+
+    @Column(name="is_noti")
+    private Boolean isNoti;
+
+    @Size(max = 13)
+    @Column(name="phone",length = 13)
+    private String phone;
+
     @Email
     @Size(min = 5, max = 100)
     @Column(length = 100, unique = true)
@@ -98,6 +106,14 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<PersistentToken> persistentTokens = new HashSet<>();
+
+    public Boolean getNoti() {
+        return isNoti;
+    }
+
+    public void setNoti(Boolean noti) {
+        isNoti = noti;
+    }
 
     public Long getId() {
         return id;
@@ -212,6 +228,14 @@ public class User extends AbstractAuditingEntity implements Serializable {
         this.persistentTokens = persistentTokens;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -237,6 +261,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
             ", firstName='" + firstName + '\'' +
             ", lastName='" + lastName + '\'' +
             ", email='" + email + '\'' +
+            ", phone='"+phone+ '\'' +
             ", imageUrl='" + imageUrl + '\'' +
             ", activated='" + activated + '\'' +
             ", langKey='" + langKey + '\'' +

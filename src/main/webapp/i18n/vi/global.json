@@ -41,6 +41,8 @@
             "language": "Ngôn ngữ"
         },
         "form": {
+            "phone":"Số điện thoại",
+            "phone.placeholder":"Số điện thoại của bạn",
             "username": "Tên tài khoản",
             "username.placeholder": "Nhập tên tài khoản của bạn",
             "newpassword": "Mật khẩu mới",

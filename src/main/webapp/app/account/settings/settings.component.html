@@ -72,6 +72,17 @@
                         </small>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="phone" jhiTranslate="global.form.phone">Phone</label>
+                    <input type="phone" class="form-control" id="phone" name="phone" placeholder="{{'global.form.phone.placeholder' | translate}}"
+                           [(ngModel)]="settingsAccount.phone" minlength="5" maxlength="100" >
+
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="noti" >Nhận thông  báo</label>
+                    <input type="checkbox" class="form-control" id="noti" name="noti"
+                           [(ngModel)]="settingsAccount.noti" >                </div>
+
                 <div class="form-group" *ngIf="languages && languages.length > 0">
                     <label for="langKey" jhiTranslate="settings.form.language">Language</label>
                     <select class="form-control" id="langKey" name="langKey" [(ngModel)]="settingsAccount.langKey">

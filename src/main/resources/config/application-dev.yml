@@ -18,6 +18,9 @@ logging:
         ROOT: DEBUG
         com.dinogroup: DEBUG
         io.github.jhipster: DEBUG
+noti:
+    hook: https://hooks.zapier.com/hooks/catch/2274589/aal5zz/
+    alert-bound: 7
 
 spring:
     profiles:

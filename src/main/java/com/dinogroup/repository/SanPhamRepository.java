@@ -14,5 +14,8 @@ import java.util.List;
 @SuppressWarnings("unused")
 @Repository
 public interface SanPhamRepository extends JpaRepository<SanPham, Long> {
-    public List<SanPham> findAllByOrderByMetConLaiAsc();
+    List<SanPham> findAllByOrderByMetConLaiAsc();
+
+    List<SanPham> findByMetConLaiLessThanOrderByMetConLaiAsc(Float metConLai);
+
 }
