@@ -10,7 +10,8 @@ import { MaSanPham } from './ma-san-pham.model';
 import { MaSanPhamPopupService } from './ma-san-pham-popup.service';
 import { MaSanPhamService } from './ma-san-pham.service';
 import {NgbDateParserFormatterEsMX} from '../../shared/datepicker.format';
-import { NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateParserFormatter, NgbDateStruct,NgbDatepickerI18n } from '@ng-bootstrap/ng-bootstrap';
+import {I18n,CustomDatepickerI18n} from '../../shared/datepicker-i18n';
 
 const now = new Date();
 
@@ -18,7 +19,8 @@ const now = new Date();
 @Component({
     selector: 'jhi-ma-san-pham-dialog',
     templateUrl: './ma-san-pham-dialog.component.html',
-      providers: [        {provide: NgbDateParserFormatter, useClass: NgbDateParserFormatterEsMX}]
+     providers: [        {provide: NgbDateParserFormatter, useClass: NgbDateParserFormatterEsMX}
+         ,I18n, {provide: NgbDatepickerI18n, useClass: CustomDatepickerI18n}]
 
 })
 

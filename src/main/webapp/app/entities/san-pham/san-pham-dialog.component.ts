@@ -11,14 +11,17 @@ import { SanPhamPopupService } from './san-pham-popup.service';
 import { SanPhamService } from './san-pham.service';
 import { MaSanPham, MaSanPhamService } from '../ma-san-pham';
 import {NgbDateParserFormatterEsMX} from '../../shared/datepicker.format';
-import { NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateParserFormatter, NgbDateStruct ,NgbDatepickerI18n} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {I18n,CustomDatepickerI18n} from '../../shared/datepicker-i18n';
 
 const now = new Date();
 
 @Component({
     selector: 'jhi-san-pham-dialog',
     templateUrl: './san-pham-dialog.component.html',
-    providers: [        {provide: NgbDateParserFormatter, useClass: NgbDateParserFormatterEsMX}]
+    providers: [        {provide: NgbDateParserFormatter, useClass: NgbDateParserFormatterEsMX}
+    ,I18n, {provide: NgbDatepickerI18n, useClass: CustomDatepickerI18n}]
 
 })
 export class SanPhamDialogComponent implements OnInit {

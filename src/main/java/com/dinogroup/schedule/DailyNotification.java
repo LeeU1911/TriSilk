@@ -31,7 +31,7 @@ public class DailyNotification {
     @Autowired
     SanPhamRepository sanPhamRepository;
 
-    @Scheduled(cron = "* 7 * * * *")
+    @Scheduled(cron = "* * 7 * * *")
     public void scheduleTaskUsingCronExpression() {
         System.out.println(hook);
         System.out.println(alertBound);

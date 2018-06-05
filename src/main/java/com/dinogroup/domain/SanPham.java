@@ -36,7 +36,7 @@ public class SanPham implements Serializable {
 
     @NotNull
     @Column(name = "so_met", nullable = false)
-    private Float soMet = 0f;
+    private Float soMet ;
 
     @Column(name = "trong_luong")
     private Float trongLuong = 0f;

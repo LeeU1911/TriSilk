@@ -18,6 +18,7 @@ import { TriSilkEntityModule } from './entities/entity.module';
 import { TriSilkReportModule } from './report/report.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 import { StateStorageService } from './shared/auth/state-storage.service';
+import { NgbdDatepickerI18n } from './shared/datepicker-i18n';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import {
     JhiMainComponent,
@@ -48,7 +49,8 @@ import {
         ErrorComponent,
         PageRibbonComponent,
         ActiveMenuDirective,
-        FooterComponent
+        FooterComponent,
+        NgbdDatepickerI18n,
     ],
     providers: [
         ProfileService,

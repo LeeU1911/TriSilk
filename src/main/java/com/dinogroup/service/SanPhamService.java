@@ -16,13 +16,15 @@ public class SanPhamService {
     @Autowired
     private HoaDonBanHangChiTietRepository hoaDonBanHangChiTietRepository;
 
-    public void updateRemainingMetre(long sanPhamId ){
+    public void updateRemainingMetre(long sanPhamId) {
         SanPham sanPham = sanPhamRepository.findOne(sanPhamId);
         if (sanPham == null) {
             return;
         }
         Float tongSoMet = hoaDonBanHangChiTietRepository.tongSoMet(sanPham);
-        sanPham.setMetConLai(sanPham.getSoMet() - tongSoMet);
+        tongSoMet = tongSoMet == null ? 0 : tongSoMet;
+        sanPham.setMetConLai(
+            sanPham.getSoMet() - tongSoMet);
         sanPhamRepository.save(sanPham);
     }
 }

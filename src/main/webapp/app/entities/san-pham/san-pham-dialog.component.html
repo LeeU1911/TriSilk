@@ -15,10 +15,11 @@
                    [(ngModel)]="sanPham.id" readonly/>
         </div>
         <div class="form-group">
+            <ngbd-datepicker-i18n></ngbd-datepicker-i18n>
             <label class="form-control-label" jhiTranslate="triSilkApp.sanPham.ngayTao" for="field_ngayTao">Ngay
                 Tao</label>
             <div class="input-group">
-                <input id="field_ngayTao" type="text" class="form-control" name="ngayTao" ngbDatepicker
+                <input id="field_ngayTao" type="text" class="form-control dp" name="ngayTao" ngbDatepicker
                        #ngayTaoDp="ngbDatepicker" [(ngModel)]="sanPham.ngayTao"
                        required/>
                 <span class="input-group-append">

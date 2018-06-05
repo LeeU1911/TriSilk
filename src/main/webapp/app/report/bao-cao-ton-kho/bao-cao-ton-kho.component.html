@@ -30,7 +30,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let sanPham of sanPhams ;trackBy: trackId" [ngStyle]="(sanPham.metConLai <10 )&& {'background-color': '#a07eb2'}">
+            <tr *ngFor="let sanPham of sanPhams ;trackBy: trackId" [ngStyle]="(sanPham.metConLai < 250 )&& {'background-color': '#a07eb2'}">
                 <td><a [routerLink]="['../san-pham', sanPham.id ]">{{sanPham.id}}</a></td>
                 <td>{{sanPham.ngayTao | date:'mediumDate'}}</td>
                 <td>{{sanPham.khoRong}}</td>
@@ -45,7 +45,7 @@
                         <a [routerLink]="['../ma-san-pham', sanPham.maSanPham?.id ]" >{{sanPham.maSanPham?.productId}}</a>
                     </div>
                 </td>
-                
+
             </tr>
             </tbody>
         </table>

@@ -252,3 +252,7 @@ Social Buttons
     color: #fff;
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */
+ ngb-datepicker *{
+width:300px;
+  }
+

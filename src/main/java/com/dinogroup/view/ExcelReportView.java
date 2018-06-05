@@ -23,29 +23,29 @@ public class ExcelReportView extends AbstractXlsView {
         Sheet sheet = workbook.createSheet("sanpham Data");
         Row header = sheet.createRow(0);
         header.createCell(0).setCellValue("ID");
-        header.createCell(1).setCellValue("Ngày Tạo");
-        header.createCell(2).setCellValue("Khổ rộng");
-        header.createCell(3).setCellValue("Số mét");
-        header.createCell(4).setCellValue("Trọng lượng");
-        header.createCell(5).setCellValue("Tên sản phẩm");
-        header.createCell(6).setCellValue("Đơn giá");
-        header.createCell(7).setCellValue("Tổng tiền");
-        header.createCell(8).setCellValue("Số mét còn lại");
-        header.createCell(9).setCellValue("Mã sản phẩm");
+        header.createCell(1).setCellValue("Mã sản phẩm");
+        header.createCell(2).setCellValue("Tên sản phẩm");
+        header.createCell(3).setCellValue("Số mét còn lại");
+        header.createCell(4).setCellValue("Ngày Tạo");
+        header.createCell(5).setCellValue("Số mét");
+        header.createCell(6).setCellValue("Khổ rộng");
+        header.createCell(7).setCellValue("Trọng lượng");
+        header.createCell(8).setCellValue("Đơn giá");
+        header.createCell(9).setCellValue("Tổng tiền");
 
         int rowNum = 1;
         for (SanPham sanPham : sanPhams) {
             Row row = sheet.createRow(rowNum++);
             row.createCell(0).setCellValue(sanPham.getId());
-            row.createCell(1).setCellValue(sanPham.getNgayTao().toString());
-            row.createCell(2).setCellValue(sanPham.getKhoRong());
-            row.createCell(3).setCellValue(sanPham.getSoMet());
-            row.createCell(4).setCellValue(sanPham.getTrongLuong());
-            row.createCell(5).setCellValue(sanPham.getTenSanPham());
-            row.createCell(6).setCellValue(sanPham.getDonGia());
-            row.createCell(7).setCellValue(sanPham.getTongTien());
-            row.createCell(8).setCellValue(sanPham.getMetConLai());
-            row.createCell(9).setCellValue(sanPham.getMaSanPham().getProductId());
+            row.createCell(1).setCellValue(sanPham.getMaSanPham().getProductId());
+            row.createCell(2).setCellValue(sanPham.getTenSanPham());
+            row.createCell(3).setCellValue(sanPham.getMetConLai());
+            row.createCell(4).setCellValue(sanPham.getNgayTao().toString());
+            row.createCell(5).setCellValue(sanPham.getSoMet());
+            row.createCell(6).setCellValue(sanPham.getKhoRong());
+            row.createCell(7).setCellValue(sanPham.getTrongLuong());
+            row.createCell(8).setCellValue(sanPham.getDonGia());
+            row.createCell(9).setCellValue(sanPham.getTongTien());
         }
     }
 }

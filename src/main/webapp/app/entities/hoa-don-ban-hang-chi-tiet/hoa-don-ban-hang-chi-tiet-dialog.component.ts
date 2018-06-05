@@ -11,15 +11,16 @@ import { HoaDonBanHangChiTietPopupService } from './hoa-don-ban-hang-chi-tiet-po
 import { HoaDonBanHangChiTietService } from './hoa-don-ban-hang-chi-tiet.service';
 import { SanPham, SanPhamService } from '../san-pham';
 import {NgbDateParserFormatterEsMX} from '../../shared/datepicker.format';
-import { NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateParserFormatter, NgbDateStruct,NgbDatepickerI18n } from '@ng-bootstrap/ng-bootstrap';
+import {I18n,CustomDatepickerI18n} from '../../shared/datepicker-i18n';
 
 const now = new Date();
 
 @Component({
     selector: 'jhi-hoa-don-ban-hang-chi-tiet-dialog',
     templateUrl: './hoa-don-ban-hang-chi-tiet-dialog.component.html',
-        providers: [        {provide: NgbDateParserFormatter, useClass: NgbDateParserFormatterEsMX}]
-
+providers: [        {provide: NgbDateParserFormatter, useClass: NgbDateParserFormatterEsMX}
+    ,I18n, {provide: NgbDatepickerI18n, useClass: CustomDatepickerI18n}]
 })
 export class HoaDonBanHangChiTietDialogComponent implements OnInit {
 
@@ -44,7 +45,7 @@ export class HoaDonBanHangChiTietDialogComponent implements OnInit {
             .subscribe((res: HttpResponse<SanPham[]>) => { this.sanphams = res.body; }, (res: HttpErrorResponse) => this.onError(res.message));
 
         this.hoaDonBanHangChiTiet.ngayBan= {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
-
+        this.hoaDonBanHangChiTiet.donGia=0;
     }
 
     clear() {
