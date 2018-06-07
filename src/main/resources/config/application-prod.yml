@@ -20,7 +20,7 @@ logging:
         io.github.jhipster: INFO
 noti:
     hook: https://hooks.zapier.com/hooks/catch/2274589/aal5zz/
-    alert-bound: 7
+    alert-bound: 250
 
 spring:
     devtools:
